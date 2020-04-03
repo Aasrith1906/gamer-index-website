@@ -1,0 +1,50 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href={{url_for('static', filename ='style.css')}}>
+{% endblock %}
+ 
+
+{% block content %}
+
+
+<div class = "container">
+	<center>
+	<div class="p-3 mb-2 bg-dark text-white">
+	<div class = "page-header">
+		<h1>{{game_test}}</h1>
+	
+	
+	</center>
+	<div class="p-3 mb-2 bg-dark text-white">
+	{{wtf.quick_form(form)}}
+	</div>
+</div>
+	</div>
+</div>
+
+</p>
+<div class = "container">
+
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			{% for message in messages %}
+			<div class = "alert alert-warning">
+			<button type="button" , class="close" , data-dismiss ="alert">&times;</button> 
+			{{ message }}
+		</div> 
+			{% endfor %}  
+		  {% endif %}
+		{% endwith %}
+		
+</div>
+
+</p>
+
+
+{% endblock %}

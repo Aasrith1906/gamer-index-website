@@ -1,0 +1,32 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Index {% endblock %}
+
+ 
+{% block content %}
+
+
+
+	<div class = "col-md-100">
+		{{wtf.quick_form(form)}}
+	</div>
+<div class = "container">
+
+
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			{% for message in messages %}
+			<div class = "alert alert-warning">
+			<button type="button" , class="close" , data-dismiss ="alert">&times;</button> 
+			{{ message }}
+		</div> 
+			{% endfor %}  
+		  {% endif %}
+		{% endwith %}
+		
+</div>
+
+</p>
+
+{% endblock %}

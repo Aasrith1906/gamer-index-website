@@ -1,0 +1,39 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href={{url_for('static', filename ='style.css')}}>
+{% endblock %}
+
+{% block content %}
+
+<div id='content' class="container">
+
+<div class = "row d-flex justify-content-center">
+<div class = "text-center">
+
+
+<ul class="list-group">
+{% for game in games_list %}
+
+<li class = "list-group-item list-group-item-dark">
+    <div class="p-3 mb-2 bg-dark text-white">
+        <div class="w-100 p-3">
+            <a  class="text-light" href = "/game{{game}}">{{game}}</a>
+        </div>
+    </div>
+</li>
+{% endfor %}
+
+
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

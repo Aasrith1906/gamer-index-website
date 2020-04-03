@@ -1,0 +1,55 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Main {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href={{url_for('static', filename ='style.css')}}>
+{% endblock %}
+
+
+{% block content %}
+
+<div class = "row d-flex justify-content-center">
+<div class = "page-header">
+  <h1><a href="/Chat" class="btn btn-dark">Chat Room</a></h1>
+</div>
+</div>
+
+<div class = "row d-flex justify-content-center">
+<div class="row">
+    <div class="col-md-100">
+      <div class = "panel-body">
+        <div class="w-100 p-3">
+
+          <div class="container-fluid">
+      <table class="table table-dark" width="200%" >
+        <thead>
+          <tr >
+            <th>SNO</th>
+            <th>Player Name</th>
+            <th>Username</th>
+            <th>Username Type</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          {% for user in req_data.values() %}
+          <tr >
+            <td>{{ user.index }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username}}</td>
+            <td>{{ user.username_type }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
